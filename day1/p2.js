@@ -11,17 +11,17 @@ fs.readFile('./p1.txt', 'utf8', function (err, data) {
   var t0 = performance.now();
   console.log(naive(inputData, 2020));
   var t1 = performance.now();
-  console.log('Call to naive took ' + (t1 - t0) + ' milliseconds.'); // 14.490859985351562 milliseconds.
+  console.log('Call to naive took ' + (t1 - t0) + ' milliseconds.'); // 14.49 milliseconds.
 
   t0 = performance.now();
   console.log(binarySearch(inputData, 2020));
   t1 = performance.now();
-  console.log('Call to binarySearch took ' + (t1 - t0) + ' milliseconds.'); // 0.36186403036117554 milliseconds.
+  console.log('Call to binarySearch took ' + (t1 - t0) + ' milliseconds.'); // 0.36 milliseconds.
 
   t0 = performance.now();
   console.log(bestICouldThinkOf(inputData, 2020));
   t1 = performance.now();
-  console.log('Call to bestICouldThinkOf took ' + (t1 - t0) + ' milliseconds.'); // 0.12577497959136963 milliseconds.
+  console.log('Call to bestICouldThinkOf took ' + (t1 - t0) + ' milliseconds.'); // 0.15 milliseconds.
 });
 
 /**
@@ -80,6 +80,9 @@ function binarySearch(input, checkValue) {
  * Time: O(n^2)
  */
 function bestICouldThinkOf(input, checkValue) {
+  // V8 does O(n log(n)) sort
+  input.sort((a, z) => a - z);
+
   for (let i = 0; i < input.length; i++) {
     let left = i + 1;
     let right = input.length - 1;

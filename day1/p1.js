@@ -11,12 +11,12 @@ fs.readFile('./p1.txt', 'utf8', function (err, data) {
   var t0 = performance.now();
   console.log(naive(inputData, 2020));
   var t1 = performance.now();
-  console.log('Call to naive took ' + (t1 - t0) + ' milliseconds.'); // 7.987610995769501 milliseconds.
+  console.log('Call to naive took ' + (t1 - t0) + ' milliseconds.'); // 7.98 milliseconds.
 
   t0 = performance.now();
   console.log(binarySearch(inputData, 2020));
   t1 = performance.now();
-  console.log('Call to binarySearch took ' + (t1 - t0) + ' milliseconds.'); // 1.7107660174369812 milliseconds.
+  console.log('Call to binarySearch took ' + (t1 - t0) + ' milliseconds.'); // 1.71 milliseconds.
 });
 
 /**
