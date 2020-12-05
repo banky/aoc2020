@@ -54,7 +54,7 @@ function part2CredentialValidator(acc, { byr, iyr, eyr, hgt, hcl, ecl, pid }) {
   const validHgt =
     (/[0-9]+in/.test(hgt) && parseInt(hgt) >= 59 && parseInt(hgt) <= 76) ||
     (/[0-9]+cm/.test(hgt) && parseInt(hgt) >= 150 && parseInt(hgt) <= 193);
-  const validHcl = /#[0-9a-f]+/.test(hcl);
+  const validHcl = hcl && hcl.length === 7 && /#[0-9a-f]+/.test(hcl);
   const validEcl = ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"].includes(
     ecl
   );
