@@ -1,5 +1,4 @@
 fs = require("fs");
-const { performance } = require("perf_hooks");
 
 fs.readFile("./input.txt", "utf8", function (err, inputData) {
   if (err) {
